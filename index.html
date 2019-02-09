@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DevHack</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+     ul.outer_navbar, ul.inner_navbar {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: mediumseagreen;
+   position: ;
+   position: -webkit-fixed;
+   top: 0;
+   text-align: center;
+   vertical-align: middle;
+  }
+
+  .outer_navbar li, .inner_navbar li {
+    display: inline;
+  }
+
+  .outer_navbar li, .inner_navbar li {
+   display: inline-block;
+   color: white;
+    text-align: center;
+    padding: 16px 14px;
+    text-decoration: none;
+  }
+
+  .inner_navbar li:hover, .outer_navbar li:hover {
+    background-color: rgba(40,159,93, 0.7);
+  }
+    
+  div {
+    padding: 5px;
+    border: 2px solid black;
+    margin :2px;
+  }
+  </style>
+</head>
+<body>
+  <ul class="outer_navbar">
+    <li id="mods_button">Mods</li>
+    <li id="events_button">Events</li>
+  </ul>
+  <div id="events_page">
+    Events Page
+    <ul class="inner_navbar">
+      <li id="today_button">Today<li>
+      <li id="tom_button">Tomorrow<li>
+      <li id="dat_button">Day After Tomorrow<li>
+    </ul>
+    <div id="today_page">
+      Today's events here.
+      <div name="subs">
+        Subscribed events for today.
+        <div class="sub_event">
+          A subscribed event.
+        </div>
+      </div>
+      <div name="others">
+        Other events for today.
+        <div class="other_event">
+          <div class="event_title">Title</div>
+          <div class="by">By mod name</div>
+          <div class="event_time">time</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tom_page">
+      Tomorrow's events here.
+      <div name="subs">
+        Subscribed events for tomorrow.
+      </div>
+      <div name="others">
+        Other events for tomorrow.
+      </div>
+    </div>
+    <div id="dat_page">
+      Day after tomorrow's events here.
+      <div name="subs">
+        Subscribed events for day after tomorrow.
+      </div>
+      <div name="others">
+        Other events for day after tomorrow.
+      </div>
+    </div>
+  </div>
+  <div id="mods_page">
+    Mods here.
+    <div id="submods">
+      Subscribed Mods
+      <div name="subs">
+        A sub event here.
+      </div>
+    </div>
+    <div id="other mods">
+      Other Mods
+      <div name="others">
+        An event here
+      </div>
+    </div>
+  </div>
+  <script src="script.js">
+  </script>
+</body>
+</html>
