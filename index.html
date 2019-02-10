@@ -1,98 +1,130 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DevHack</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <ul class="outer_navbar">
-    <li id="mods_button">Mods</li>
+ <ul class="outer_navbar">
+   	<li id="mods_button">Mods</li>
     <li id="events_button">Events</li>
-  </ul>
+ </ul>
 
-  <div id="events_page">
-    Events Page
-
+ <div id="events_page">
     <ul class="inner_navbar">
       <li id="today_button">Today</li>
       <li id="tom_button">Tomorrow</li>
       <li id="dat_button">Day After Tomorrow</li>
     </ul>
-
-
-  <div id="events_page_in">
-    <div id="today_page">
-      <div name="subs">
-        <div class = "heading" >SUBSCRIBED</div>
-        <div class="sub_event">
-            <div class="event_title">Title</div>
-            <div class="by">By mod name</div>
-            <div class="event_time">time</div>
+    <div id="events_page_in">
+        <div id="today_page">
+            <div name="subs">
+                <div class = "heading" >SUBSCRIBED</div>
+                    <div class="sub_event">
+                        <div class="event_info">
+                            <div class="event_title">Title</div>
+                            <div class="by">By mod name</div>
+                            <div class="event_time">time</div>
+                        </div>
+                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                    </div>
+            </div>
+            <div name="others">
+                <div class = "heading" >OTHERS</div>
+                    <div class="other_event">
+                        <div class="event_info">
+                            <div class="event_title">Title</div>
+                            <div class="by">By mod name</div>
+                            <div class="event_time">time</div>
+                        </div>
+                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                    </div>
+                    <div class="other_event">
+                        <div class="event_info">
+                            <div class="event_title">Title</div>
+                            <div class="by">By mod name</div>
+                            <div class="event_time">time</div>
+                        </div>
+                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                    </div>
+            </div>
         </div>
-      </div>
-      <div name="others">
-            <div class = "heading" >OTHERS</div>
-        <div class="other_event">
-          <div class="event_title">Title</div>
-          <div class="by">By mod name</div>
-          <div class="event_time">time</div>
-      </div>
-      <div class="other_event">
-          <div class="event_info">
-            <div class="event_title">Title</div>
-            <div class="by">By mod name</div>
-            <div class="event_time">time</div>
-        </div>
-            <div class="add_to_calendar"><img src="add.png" alt=""></div>
-        </div>
-    </div>
-    </div>
 
-    <div id="tom_page">
-      Tomorrow's events here.
-      <div name="subs">
-          <div class = "heading" >SUBSCRIBED</div>
-      </div>
-      <div name="others">
-            <div class = "heading" >OTHERS</div>
-      </div>
-    </div>
+        <div id="tom_page">
+            <div name="subs">
+                <div class = "heading" >SUBSCRIBED</div>
+                    <div class="sub_event">
+                        <div class="event_info">
+                            <div class="event_title">Title</div>
+                            <div class="by">By mod name</div>
+                            <div class="event_time">time</div>
+                        </div>
+                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                    </div>
+            </div>
+            <div name="others">
+                <div class = "heading" >OTHERS</div>
+                    <div class="other_event">
+                        <div class="event_info">
+                            <div class="event_title">Title</div>
+                            <div class="by">By mod name</div>
+                            <div class="event_time">time</div>
+                        </div>
+                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                    </div>
+            </div>
+        </div>
 
-    <div id="dat_page">
-      Day after tomorrow's events here.
-      <div name="subs">
-            <div class = "heading" >SUBSCRIBED</div>
-      </div>
-      <div name="others">
-            <div class = "heading" >OTHERS</div>
-      </div>
-    </div>
+        <div id="dat_page">
+            <div name="subs">
+                <div class = "heading" >SUBSCRIBED</div>
+                    <div class="sub_event">
+                        <div class="event_info">
+                            <div class="event_title">Title</div>
+                            <div class="by">By mod name</div>
+                            <div class="event_time">time</div>
+                        </div>
+                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                    </div>
+            </div>
+            <div name="others">
+                <div class = "heading" >OTHERS</div>
+                    <div class="other_event">
+                        <div class="event_info">
+                            <div class="event_title">Title</div>
+                            <div class="by">By mod name</div>
+                            <div class="event_time">time</div>
+                        </div>
+                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                    </div>
+            </div>
+        </div>
    </div>
-  </div>
+ </div>
 
 
-  <div id="mods_page">
-    Mods here.
+ <div id="mods_page">
     <div id="submods">
-            <div class = "heading" >SUBSCRIBED</div>
-      <div name="subs">
-        A sub event here.
-      </div>
+        <div class = "heading" >SUBSCRIBED</div>
+            <div name="subs">
+                <div class="sub_mod">
+                    <div class="mod_name">Title</div>
+                    <div class="remove"><img src="remove.png" alt=""></div>
+                </div>
+        </div>
     </div>
     <div id="other mods">
-            <div class = "heading" >OTHERS</div>
-      <div name="others">
-        An event here
-      </div>
+        <div class = "heading" >OTHERS</div>
+            <div name="others">
+                <div class="other_mod">
+                    <div class="mod_name">Title</div>
+                    <div class="add_to_sub"><img src="plus.png" alt=""></div>
+                </div>
+            </div>
     </div>
-  </div>
+ </div>
 
-  
-  <script src="script.js">
-    </script>
+<script src="script.js"></script>
 </body>
 </html>

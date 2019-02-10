@@ -12,8 +12,6 @@ ul.outer_navbar, ul.inner_navbar {
     padding: 0;
     overflow: hidden;
     background-color:rgb(70, 70, 210);
-    position: ;
-    position: -webkit-fixed;
     top: 0;
     text-align: center;
     vertical-align: middle;
@@ -36,7 +34,7 @@ ul.outer_navbar, ul.inner_navbar {
     cursor: pointer;
   }
 
-#events_page_in {
+#events_page_in, #mods_page {
     padding : 4%;
 }
 
@@ -45,24 +43,24 @@ ul.outer_navbar, ul.inner_navbar {
     vertical-align: middle;
 }
 
-.heading {
+.heading, .mod_name {
     font-weight: bolder;
     letter-spacing: 1px;
 }
 
-.add_to_calendar {
+.add_to_calendar, .remove, .add_to_sub {
     width: 8%;
     height: 8%;
-    float: right;
+    display: inline-block;
     vertical-align: middle;
 }
 
-.add_to_calendar img {
+.add_to_calendar img, .remove img, .add_to_sub img {
     max-height: 100%;
   max-width: 100%;
 }
 
-.other_event, .sub_event {
+.other_event, .sub_event, .sub_mod, .other_mod {
     background-color: rgba(153, 153, 153, 0.5);
     height: fit-content;
     width: 80%;
@@ -75,7 +73,7 @@ ul.outer_navbar, ul.inner_navbar {
     padding-right: 11%;
 }
 
-.sub_event {
+.sub_event, .sub_mod {
     background-color: rgba(255, 215, 0, 0.8);
 
 }
@@ -104,6 +102,7 @@ ul.outer_navbar, ul.inner_navbar {
     margin: 0;
     margin-top: 0.4em;
 }
-.eventfs {
-    background-color: rgb(255, 255, 153)
+
+.others {
+    margin-top: 2vh;
 }
