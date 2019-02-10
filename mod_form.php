@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
 <?php
 
 // define variables and set to empty values
@@ -12,10 +17,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $auth_code = test_input($_POST["auth_code"]);
 }
 
+//
+
+echo "$event_name , $start_time , $end_time <br>";
+echo "$event_desc <br>";
+echo "$username , $auth_code <br>";
+
+//
+
 $event_name_err = $start_time_err = $end_time_err =  $event_desc_error = $username_err = $auth_code_err = "";
 
 $b = false;
-$auth_file = fopen(auth_code.txt, r)
+$auth_file = fopen("auth_code.txt", "r");
 while($b==false){
   if(fgets($auth_file)==$auth_code){
     $b = true;
@@ -47,11 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if(empty($_POST["auth_code"])){
-    $auth_code_err = "Please verify authentication code."
+    $auth_code_err = "Please verify authentication code.";
   } else if ($b == false){
-    $auth_code_err = "The authentication ID is invalid."
+    $auth_code_err = "The authentication ID is invalid.";
   } else{
-    $auth_code = test_input($_POST["auth_code"])
+    $auth_code = test_input($_POST["auth_code"]);
   }
   if(true){
     $event_desc = test_input($_POST["event_desc"]);
@@ -59,25 +72,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-$det1 = fopen(details1.txt);
-if(is_writeable($det1)){
+$det1 = fopen("details1.txt", "w");
+if(is_writeable("$det1")){
   fwrite($det1, $event_name);
-  fwrite($det1, <br>);
+  fwrite($det1, "<br>");
   fwrite($det1, $event_desc);
-  fwrite($det1, <br>);
+  fwrite($det1, "<br>");
   fwrite($det1, $start_time);
-  fwrite($det1, <br>);
+  fwrite($det1, "<br>");
   fwrite($det1, $end_time);
-  fwrite($det1, <br>);
+  fwrite($det1, "<br>");
   fwrite($det1, $auth_code);
-  fwrite($det1, <br>); //auth_code gives mod club info to sort for subcriptions
+  fwrite($det1, "<br>"); //auth_code gives mod club info to sort for subcriptions
 }
 fclose($det1);
 
-$det2 = fopen(descrip.txt);
-if(is_writeable($det2)){
+$det2 = fopen("descrip.txt", "w");
+if(is_writeable("$det2")){
   fwrite($det2, $event_desc);
-  fwrite($det2, <br>);
+  fwrite($det2, "<br>");
 }
 
 function test_input($data) {
@@ -87,3 +100,6 @@ function test_input($data) {
   return $data;
 }
 ?>
+
+</body>
+</html>
