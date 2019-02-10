@@ -6,7 +6,7 @@
 <?php
 
 // define variables and set to empty values
-$event_name = $start_time = $end_time = $event_desc = $username = $auth_code = "";
+$event_venue = $event_name = $start_time = $end_time = $event_desc = $username = $auth_code = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $event_name = test_input($_POST["event_name"]);
@@ -15,27 +15,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $event_desc = test_input($_POST["event_desc"]);
   $username = test_input($_POST["username"]);
   $auth_code = test_input($_POST["auth_code"]);
+  $event_venue = test_input($_POST["auth_code"]);
 }
 
 //
 
 echo "$event_name , $start_time , $end_time <br>";
-echo "$event_desc <br>";
+echo "$event_desc, $event_venue <br>";
 echo "$username , $auth_code <br>";
 
 //
 
-$event_name_err = $start_time_err = $end_time_err =  $event_desc_error = $username_err = $auth_code_err = "";
-
-$b = false;
-$auth_file = fopen("auth_code.txt", "r");
-while($b==false){
-  if(fgets($auth_file)==$auth_code){
-    $b = true;
-    break;
-  }
-}
-fclose($auth_file);
+$event_venue_err = $event_name_err = $start_time_err = $end_time_err =  $event_desc_error = $username_err = $auth_code_err = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   //event name val
@@ -61,10 +52,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   if(empty($_POST["auth_code"])){
     $auth_code_err = "Please verify authentication code.";
-  } else if ($b == false){
-    $auth_code_err = "The authentication ID is invalid.";
   } else{
     $auth_code = test_input($_POST["auth_code"]);
+  }
+  if(empty($_{POST["event venue"]})){
+    $event_venue_err = "Please enter a venue for the event";
+  } else{
+    $event_venue = test_input($_POST["event_venue"]);
   }
   if(true){
     $event_desc = test_input($_POST["event_desc"]);
@@ -72,26 +66,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 
-$det1 = fopen("details1.txt", "w");
-if(is_writeable("$det1")){
-  fwrite($det1, $event_name);
-  fwrite($det1, "<br>");
-  fwrite($det1, $event_desc);
-  fwrite($det1, "<br>");
-  fwrite($det1, $start_time);
-  fwrite($det1, "<br>");
-  fwrite($det1, $end_time);
-  fwrite($det1, "<br>");
-  fwrite($det1, $auth_code);
-  fwrite($det1, "<br>"); //auth_code gives mod club info to sort for subcriptions
-}
-fclose($det1);
+$net_str = trim($username) + " "+ $auth_code;
+$b = false;
+$auth_file = fopen("auth_code.txt", "r");
 
-$det2 = fopen("descrip.txt", "w");
-if(is_writeable("$det2")){
-  fwrite($det2, $event_desc);
-  fwrite($det2, "<br>");
+while(!feof($auth_file)){
+  // echo fgets($auth_file)."<br>";
+  $str_uid_pw = fgets($auth_file);
+  if(trim($str_uid_pw)==$net_str){
+    $b = true;
+    break;
+  }
 }
+
+if(b==true){
+  $det1 = fopen("details1.txt", "w");
+  if(is_writeable("$det1")){
+    fwrite($det1, $event_name);
+    fwrite($det1, "<br>");
+    fwrite($det1, $event_desc);
+    fwrite($det1, "<br>");
+    fwrite($det1, $start_time);
+    fwrite($det1, "<br>");
+    fwrite($det1, $end_time);
+    fwrite($det1, "<br>");
+    fwrite($det1, $auth_code);
+    fwrite($det1, "<br>"); //auth_code gives mod club info to sort for subcriptions
+  }
+  fclose($det1);
+
+  $det2 = fopen("descrip.txt", "w");
+  if(is_writeable("$det2")){
+    fwrite($det2, $event_desc);
+    fwrite($det2, "<br>");
+  }
+
+} else{
+  $auth_code_err = "kindly verify your authentication code.";
+  echo $auth_code_err;
+}
+
 
 function test_input($data) {
   $data = trim($data);
