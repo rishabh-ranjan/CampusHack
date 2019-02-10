@@ -177,15 +177,23 @@
                 Event Name :
              </td>
              <td>
-                 <input type="text" name="event_name">
+                 <input type="text" name="event_name" required>
              </td>
+        </tr>
+        <tr>
+            <td>
+                Venue :
+            </td>
+            <td>
+                <input type="text" name="event_venue" required>
+            </td>
         </tr>
         <tr>
             <td>
                 Starts At :
             </td>
             <td>
-                <input type="datetime-local" name="start_time">
+                <input type="datetime-local" name="start_time" required>
             </td>
         </tr>
         <tr>
@@ -210,7 +218,7 @@
                 Username :
             </td>
             <td>
-                <input type="text" name="username">
+                <input type="text" name="username" required>
             </td>
         </tr>
         <tr>
@@ -218,12 +226,12 @@
                 Code :
             </td>
             <td>
-                <input type="password" name="auth_code">
+                <input type="password" name="auth_code" required>
             </td>
         </tr>
         <tr>
             <td>
-                <input type="submit" name="submit">
+                <input type="submit" name="submit" class="submit_button">
             </td>
         </tr>
      </form></table></center>
