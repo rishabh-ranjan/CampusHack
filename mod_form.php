@@ -28,6 +28,10 @@ echo "$username , $auth_code <br>";
 
 $event_venue_err = $event_name_err = $start_time_err = $end_time_err =  $event_desc_error = $username_err = $auth_code_err = "";
 
+// $testsrt = "party";
+// $file23 = fopen("descrip.txt", "w");
+// fwrite($file23, $teststr);
+
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //   //event name val
 //   if (empty($_POST["event_name"])) {
@@ -70,7 +74,7 @@ $net_str = trim($username);
 $net_str .= " ";
 $net_str .= $auth_code;
 $b = false;
-$auth_file = fopen("auth_code.txt", "r");
+$auth_file = fopen("./auth_code.txt", "r") or die("Unable to open file!");
 
 while(!feof($auth_file)){
   // echo fgets($auth_file)."<br>";
@@ -82,26 +86,27 @@ while(!feof($auth_file)){
 }
 
 if($b==true){
-  $det1 = fopen("details1.txt", "w");
-  if(is_writeable("$det1")){
-    fwrite($det1, $event_name);
-    fwrite($det1, "<br>");
-    fwrite($det1, $event_desc);
-    fwrite($det1, "<br>");
-    fwrite($det1, $start_time);
-    fwrite($det1, "<br>");
-    fwrite($det1, $end_time);
-    fwrite($det1, "<br>");
-    fwrite($det1, $auth_code);
-    fwrite($det1, "<br>"); //auth_code gives mod club info to sort for subcriptions
-  }
+  $det1 = fopen("./details1.txt", "a") or die("Unable to open file!");
+  // if(is_writeable("$det1")){
+    fwrite($det1, $event_name."\n");
+    // fwrite("details1.txt", "<br>");
+    fwrite($det1, $event_venue."\n");
+    // fwrite("details1.txt", "<br>");
+    fwrite($det1, $start_time."\n");
+    // fwrite("details1.txt", "<br>");
+    fwrite($det1, $end_time."\n");
+    // fwrite("details1.txt", "<br>");
+    fwrite($det1, $auth_code."\n");
+    // fwrite("details1.txt", "<br>"); //auth_code gives mod club info to sort for subcriptions
+  // }
   fclose($det1);
 
-  $det2 = fopen("descrip.txt", "w");
-  if(is_writeable("$det2")){
+  $det2 = fopen("./descrip.txt", "a") or die("Unable to open file!");
+ // if(is_writeable("$det2")){
     fwrite($det2, $event_desc);
-    fwrite($det2, "<br>");
-  }
+    // fwrite("descrip.txt", "<br>");
+ // }
+  fclose($det2);
 
 } else{
   $auth_code_err = "kindly verify your authentication code.";
