@@ -2,7 +2,6 @@
 
 $det1 = fopen("./details1.txt", "r") or die("Unable to open file!");
 
-$i = 0;
 
 while(!feof($det1)){
 
