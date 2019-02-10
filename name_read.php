@@ -10,4 +10,5 @@ while(!feof($det)){
   $linesp = fgets($det);
   echo $linesp."\n";
 }
+fclose($det);
  ?>

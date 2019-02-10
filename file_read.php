@@ -6,35 +6,34 @@
 
 $det1 = fopen("./details1.txt", "r") or die("Unable to open file!");
 
-$i = 0;
 
 while(!feof($det1)){
 
   $name = fgets($det1);
   $name = trim($name);
+  echo $name."\n";
 
   $venue = fgets($det1);
   $venue = trim($venue);
-
+  echo $venue."\n";
 
   $start_time = fgets($det1);
   $start_time = trim($start_time);
+  echo $start_time."\n";
 
 
   $end_time = fgets($det1);
   $end_time = trim($end_time);
-
-  $one_event = array($name, $venue, $start_time, $end_time);
-
-  $all_events[i] = $one_event;
-
-  $i++;
+  echo $end_time."\n";
 
   $auth_code = fgets($det1);
-}
+  $auth_code = trim($auth_code);
+  echo $auth_code."\n";
 
-for($j =0; $j < $i; $j++){
-  echo $all_events[j]."\n"
+  $blank = fgets($det1):
+  $blank = trim($blank);
+  echo $blank;
+
 }
 
 fclose($det1);
