@@ -7,18 +7,30 @@
 </head>
 <body>
  <ul class="outer_navbar">
-   	<li id="mods_button">Mods</li>
-    <li id="events_button">Events</li>
+   	<li id="mods_button" class="active">MODS</li>
+    <li id="events_button">EVENTS</li>
+    <li id-"add_event">ADD EVENT</li>
  </ul>
 
  <div id="events_page">
     <ul class="inner_navbar">
-      <li id="today_button">Today</li>
-      <li id="tom_button">Tomorrow</li>
-      <li id="dat_button">Day After Tomorrow</li>
+      <li id="today_button">TODAY</li>
+      <li id="tom_button">TOMORROW</li>
+      <li id="dat_button">UPCOMING</li>
     </ul>
     <div id="events_page_in">
         <div id="today_page">
+            <div name="starred">
+                <div class = "heading" >STARRED</div>
+                    <div class="starred_event">
+                        <div class="event_info">
+                            <div class="event_title">Title</div>
+                            <div class="by">By mod name</div>
+                            <div class="event_time">time</div>
+                        </div>
+                        <div class="unstar" id="unstar"><img src="unstar.png" alt=""></div>
+                    </div>
+            </div>
             <div name="subs">
                 <div class = "heading" >SUBSCRIBED</div>
                     <div class="sub_event">
@@ -27,7 +39,7 @@
                             <div class="by">By mod name</div>
                             <div class="event_time">time</div>
                         </div>
-                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                        <div class="star" id="star"><img src="star.png" alt=""></div>
                     </div>
             </div>
             <div name="others">
@@ -38,7 +50,7 @@
                             <div class="by">By mod name</div>
                             <div class="event_time">time</div>
                         </div>
-                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                        <div class="star"  id="star"><img src="star.png" alt=""></div>
                     </div>
                     <div class="other_event">
                         <div class="event_info">
@@ -46,12 +58,23 @@
                             <div class="by">By mod name</div>
                             <div class="event_time">time</div>
                         </div>
-                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                        <div class="star"  id="star"><img src="star.png" alt=""></div>
                     </div>
             </div>
         </div>
 
         <div id="tom_page">
+            <div name="starred">
+                <div class = "heading" >STARRED</div>
+                    <div class="starred_event">
+                        <div class="event_info">
+                            <div class="event_title">Title</div>
+                            <div class="by">By mod name</div>
+                            <div class="event_time">time</div>
+                        </div>
+                        <div class="unstar" id="unstar"><img src="unstar.png" alt=""></div>
+                    </div>
+            </div>
             <div name="subs">
                 <div class = "heading" >SUBSCRIBED</div>
                     <div class="sub_event">
@@ -60,7 +83,7 @@
                             <div class="by">By mod name</div>
                             <div class="event_time">time</div>
                         </div>
-                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                        <div class="star" id="star"><img src="star.png" alt=""></div>
                     </div>
             </div>
             <div name="others">
@@ -71,12 +94,23 @@
                             <div class="by">By mod name</div>
                             <div class="event_time">time</div>
                         </div>
-                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                        <div class="star" id="star"><img src="star.png" alt=""></div>
                     </div>
             </div>
         </div>
 
         <div id="dat_page">
+            <div name="starred">
+                <div class = "heading" >STARRED</div>
+                    <div class="starred_event">
+                        <div class="event_info">
+                            <div class="event_title">Title</div>
+                            <div class="by">By mod name</div>
+                            <div class="event_time">time</div>
+                        </div>
+                        <div class="unstar" id="unstar"><img src="unstar.png" alt=""></div>
+                    </div>
+            </div>
             <div name="subs">
                 <div class = "heading" >SUBSCRIBED</div>
                     <div class="sub_event">
@@ -85,7 +119,7 @@
                             <div class="by">By mod name</div>
                             <div class="event_time">time</div>
                         </div>
-                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                        <div class="star" id="star"><img src="star.png" alt=""></div>
                     </div>
             </div>
             <div name="others">
@@ -96,7 +130,7 @@
                             <div class="by">By mod name</div>
                             <div class="event_time">time</div>
                         </div>
-                        <div class="add_to_calendar"><img src="add.png" alt=""></div>
+                        <div class="star" id="star"><img src="star.png" alt=""></div>
                     </div>
             </div>
         </div>
@@ -106,23 +140,34 @@
 
  <div id="mods_page">
     <div id="submods">
-        <div class = "heading" >SUBSCRIBED</div>
+        <div class = "heading">SUBSCRIBED</div>
             <div name="subs">
                 <div class="sub_mod">
                     <div class="mod_name">Title</div>
-                    <div class="remove"><img src="remove.png" alt=""></div>
+                    <div class="remove" id="remove"><img src="remove.png" alt=""></div>
                 </div>
-        </div>
+            </div>
     </div>
     <div id="other mods">
         <div class = "heading" >OTHERS</div>
             <div name="others">
                 <div class="other_mod">
                     <div class="mod_name">Title</div>
-                    <div class="add_to_sub"><img src="plus.png" alt=""></div>
+                    <div class="add_to_sub" id="add_to_sub"><img src="plus.png" alt=""></div>
                 </div>
             </div>
     </div>
+ </div>
+
+ <div id="add_event_page">
+     <div class="heading">ADD AN EVENT</div>
+     <table><form action="file.php" method="POST">
+         <tr>
+             <td>
+                gcjhjcgj
+             </td>
+            </tr>
+     </form></table>
  </div>
 
 <script src="script.js"></script>

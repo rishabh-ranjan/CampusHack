@@ -34,6 +34,10 @@ ul.outer_navbar, ul.inner_navbar {
     cursor: pointer;
   }
 
+  .active {
+      background-color: rgb(10,10,150)
+  }
+
 #events_page_in, #mods_page {
     padding : 4%;
 }
@@ -48,19 +52,19 @@ ul.outer_navbar, ul.inner_navbar {
     letter-spacing: 1px;
 }
 
-.add_to_calendar, .remove, .add_to_sub {
+.add_to_sub, .remove, .star, .unstar {
     width: 8%;
     height: 8%;
     display: inline-block;
     vertical-align: middle;
 }
 
-.add_to_calendar img, .remove img, .add_to_sub img {
+.add_to_sub img, .remove img, .star img, .unstar img {
     max-height: 100%;
   max-width: 100%;
 }
 
-.other_event, .sub_event, .sub_mod, .other_mod {
+.other_event, .sub_event, .sub_mod, .other_mod, .starred_event {
     background-color: rgba(153, 153, 153, 0.5);
     height: fit-content;
     width: 80%;
@@ -71,12 +75,15 @@ ul.outer_navbar, ul.inner_navbar {
     padding: 4%;
     padding-left: 11%;
     padding-right: 11%;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
 }
 
-.sub_event, .sub_mod {
+/* .sub_event, .sub_mod {
     background-color: rgba(255, 215, 0, 0.8);
 
-}
+} */
 
 .other_event div, .sub_event div {
     border: 0;
