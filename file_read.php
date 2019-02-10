@@ -29,6 +29,8 @@ while(!feof($det1)){
   $all_events[i] = $one_event;
 
   $i++;
+
+  $auth_code = fgets($det1);
 }
 
 for($j =0; $j < $i; $j++){
