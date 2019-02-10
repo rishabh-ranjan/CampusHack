@@ -1,7 +1,7 @@
 /* Dynamic card behavior in mods page */
 
 /* global data variables */
-var mod_names = ["DevClub", "ANCC", "Music Club", "Drama Club", "Fine Arts Club"];
+// var mod_names = ["DevClub", "ANCC", "Music Club", "Drama Club", "Fine Arts Club"];
 var is_mod_subd = [true, false, true, false, false];
 var mod_cards = [];
 
