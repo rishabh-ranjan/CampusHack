@@ -160,14 +160,63 @@
  </div>
 
  <div id="add_event_page">
-     <div class="heading">ADD AN EVENT</div>
-     <table><form action="file.php" method="POST">
+     <div class="heading">ADD AN EVENT</div><center>
+     <table class="add_event_table"><form action="file.php" method="POST">
          <tr>
              <td>
-                gcjhjcgj
+                Event Name :
              </td>
-            </tr>
-     </form></table>
+             <td>
+                 <input type="text" name="event_name">
+             </td>
+        </tr>
+        <tr>
+            <td>
+                Starts At :
+            </td>
+            <td>
+                <input type="datetime-local" name="start_time">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ends At :
+            </td>
+            <td>
+                <input type="datetime-local" name="end_time">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Event Description :
+            </td>
+            <td>
+                <textarea rows="3" name="event_desc"></textarea>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td>
+                Username :
+            </td>
+            <td>
+                <input type="text" name="username">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Code :
+            </td>
+            <td>
+                <input type="password" name="auth_code">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="submit">
+            </td>
+        </tr>
+     </form></table></center>
  </div>
 
 <script src="script.js"></script>
