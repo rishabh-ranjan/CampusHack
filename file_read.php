@@ -4,7 +4,7 @@
 
 <?php
 
-$det1 = fopen("details1.txt", "r") or die("Unable to open file!");
+$det1 = fopen("./details1.txt", "r") or die("Unable to open file!");
 
 $i = 0;
 
@@ -38,7 +38,7 @@ for($j =0; $j < $i; $j++){
 fclose($det1);
 
 '''
-$det2 = fopen("descrip.txt", "r") or die("Unable to open file!");
+$det2 = fopen("./descrip.txt", "r") or die("Unable to open file!");
 
 $k = 0;
 
