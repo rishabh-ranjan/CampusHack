@@ -21,15 +21,15 @@ var dat_page = document.getElementById('dat_page');
 
 // map of all the button id's in outer_navbar and its page
 var outer_navbar = {
-	'mods_button': mods_page,
-	'events_button': events_page
+    'mods_button': mods_page,
+    'events_button': events_page
 };
 
 // above for inner navbar
 var inner_navbar = {
-	'today_button': today_page,
-	'tom_button': tom_page,
-	'dat_button': dat_page
+    'today_button': today_page,
+    'tom_button': tom_page,
+    'dat_button': dat_page
 };
 
 // currently active outer navbar page
@@ -39,16 +39,16 @@ var active_inner_button = today_button;
 /* Functions */
 function changeOuterPage(event)
 {
-	outer_navbar[active_outer_button.id].style.display = 'none';
-	outer_navbar[event.target.id].style.display = 'block';
-	active_outer_button = event.target;
+    outer_navbar[active_outer_button.id].style.display = 'none';
+    outer_navbar[event.target.id].style.display = 'block';
+    active_outer_button = event.target;
 }
 
 function changeInnerPage(event)
 {
-	inner_navbar[active_inner_button.id].style.display = 'none';
-	inner_navbar[event.target.id].style.display = 'block';
-	active_inner_button = event.target;
+    inner_navbar[active_inner_button.id].style.display = 'none';
+    inner_navbar[event.target.id].style.display = 'block';
+    active_inner_button = event.target;
 }
 
 /* Initializations / assignment of properties/functions */
@@ -59,15 +59,15 @@ function changeInnerPage(event)
 // for outer navbar
 for(let button_id in outer_navbar)
 {
-	outer_navbar[button_id].style.display = 'none';
-	document.getElementById(button_id).addEventListener('click', changeOuterPage, false);
+    outer_navbar[button_id].style.display = 'none';
+    document.getElementById(button_id).addEventListener('click', changeOuterPage, false);
 }
 outer_navbar[active_outer_button.id].style.display = 'block';
 
 // same as above for inner navbar
 for(let button_id in inner_navbar)
 {
-	inner_navbar[button_id].style.display = 'none';
-	document.getElementById(button_id).addEventListener('click', changeInnerPage, false);
+    inner_navbar[button_id].style.display = 'none';
+    document.getElementById(button_id).addEventListener('click', changeInnerPage, false);
 }
 inner_navbar[active_inner_button.id].style.display = 'block';
