@@ -12,6 +12,7 @@ ul.outer_navbar, ul.inner_navbar {
     padding: 0;
     overflow: hidden;
     background-color:rgb(70, 70, 210);
+    position: sticky;
     top: 0;
     text-align: center;
     vertical-align: middle;
@@ -29,16 +30,18 @@ ul.outer_navbar, ul.inner_navbar {
     text-decoration: none;
 }
 
-.inner_navbar li:hover, .outer_navbar li:hover {
+  .inner_navbar li:not(.active):hover, .outer_navbar li:not(.active):hover {
     background-color: rgba(50,50,190, 0.7);
     cursor: pointer;
 }
 
-.active {
-      background-color: rgb(10,10,150)
-}
+  .active {
+      background-color: rgb(25,25,102);
+      /* border-top-left-radius: 20px;
+      border-top-right-radius: 20px; */
+  }
 
-#events_page_in, #mods_page {
+#events_page_in, #mods_page, #add_event_page {
     padding : 4%;
 }
 
@@ -50,11 +53,12 @@ ul.outer_navbar, ul.inner_navbar {
 .heading, .mod_name {
     font-weight: bolder;
     letter-spacing: 1px;
+    margin: 2px;
 }
 
 .add_sub, .remove_sub, .star, .unstar {
     width: 8%;
-    height: 8%;
+    height: 100%;
     display: inline-block;
     vertical-align: middle;
 }
@@ -103,7 +107,7 @@ ul.outer_navbar, ul.inner_navbar {
     margin: 0;
 }
 
-.event_time {
+.event_time, .venue {
     color: white;
     font-size: 1em;
     margin: 0;
@@ -113,3 +117,12 @@ ul.outer_navbar, ul.inner_navbar {
 .others {
     margin-top: 2vh;
 }
+
+.submit_button {
+    background: rgb(70, 70, 210);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    height: 50px;
+    width: 100px;
+    }    
