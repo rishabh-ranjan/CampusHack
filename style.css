@@ -15,28 +15,28 @@ ul.outer_navbar, ul.inner_navbar {
     top: 0;
     text-align: center;
     vertical-align: middle;
-  }
+}
 
-  .outer_navbar li, .inner_navbar li {
+.outer_navbar li, .inner_navbar li {
     display: inline;
-  }
+}
 
-  .outer_navbar li, .inner_navbar li {
+.outer_navbar li, .inner_navbar li {
     display: inline-block;
     color: white;
     text-align: center;
     padding: 16px 14px;
     text-decoration: none;
-  }
+}
 
-  .inner_navbar li:hover, .outer_navbar li:hover {
+.inner_navbar li:hover, .outer_navbar li:hover {
     background-color: rgba(50,50,190, 0.7);
     cursor: pointer;
-  }
+}
 
-  .active {
+.active {
       background-color: rgb(10,10,150)
-  }
+}
 
 #events_page_in, #mods_page {
     padding : 4%;
@@ -52,14 +52,14 @@ ul.outer_navbar, ul.inner_navbar {
     letter-spacing: 1px;
 }
 
-.add_to_sub, .remove, .star, .unstar {
+.add_sub, .remove_sub, .star, .unstar {
     width: 8%;
     height: 8%;
     display: inline-block;
     vertical-align: middle;
 }
 
-.add_to_sub img, .remove img, .star img, .unstar img {
+.add_sub img, .remove_sub img, .star img, .unstar img {
     max-height: 100%;
   max-width: 100%;
 }
