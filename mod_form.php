@@ -97,13 +97,17 @@ if($b==true){
     fwrite($det1, $end_time."\n");
     // fwrite("details1.txt", "<br>");
     fwrite($det1, $auth_code."\n");
+    fwrite($det1, "\n");
     // fwrite("details1.txt", "<br>"); //auth_code gives mod club info to sort for subcriptions
   // }
   fclose($det1);
 
   $det2 = fopen("./descrip.txt", "a") or die("Unable to open file!");
  // if(is_writeable("$det2")){
-    fwrite($det2, $event_desc);
+     fwrite($det2, $event_name."\n");
+     fwrite($det2, "start descrip\n");
+     fwrite($det2, $event_desc."\n");
+     fwrite($det2, "end descrip\n");
     // fwrite("descrip.txt", "<br>");
  // }
   fclose($det2);
