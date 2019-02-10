@@ -38,7 +38,7 @@ ul.outer_navbar, ul.inner_navbar {
       background-color: rgb(10,10,150)
   }
 
-#events_page_in, #mods_page {
+#events_page_in, #mods_page, #add_event_page {
     padding : 4%;
 }
 
@@ -50,11 +50,12 @@ ul.outer_navbar, ul.inner_navbar {
 .heading, .mod_name {
     font-weight: bolder;
     letter-spacing: 1px;
+    margin: 2px;
 }
 
 .add_to_sub, .remove, .star, .unstar {
     width: 8%;
-    height: 8%;
+    height: 100%;
     display: inline-block;
     vertical-align: middle;
 }
@@ -103,7 +104,7 @@ ul.outer_navbar, ul.inner_navbar {
     margin: 0;
 }
 
-.event_time {
+.event_time, .venue {
     color: white;
     font-size: 1em;
     margin: 0;
