@@ -1,12 +1,12 @@
 /* Dynamic card behavior in mods page */
 
 /* global data variables */
-var tom_event_names = ["Tor", "gui", "Raag", "Mujra", "Draw"];
-var tom_event_mods = ["DevClub", "ANCC", "Music Club", "Drama Club", "Fine Arts Club"];
-var tom_event_venues = ["LH318", "VI 67", "SAC", "Basement", "Lounge"];
-var tom_event_start_dates = ["2 Feb", "6 Feb", "8 Feb", "10 Feb", "15 Feb"];
-var tom_is_event_subd = [true, false, true, false, false];
-var tom_is_event_strd = [false, false, true, true, false];
+var tom_event_names = ["Blood Donation"];
+var tom_event_mods = ["NSS"];
+var tom_event_venues = ["WindT"];
+var tom_event_start_dates = ["12 Feb 10:00am - 12 Feb 5:00pm"];
+var tom_is_event_subd = [false];
+var tom_is_event_strd = [false];
 var tom_event_cards = [];
 
 /* DOM variables */
