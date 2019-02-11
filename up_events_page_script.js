@@ -1,53 +1,53 @@
 /* Dynamic card behavior in mods page */
 
 /* global data variables */
-var event_names = ["Tor", "gui", "Raag", "Mujra", "Draw"];
-var event_mods = ["DevClub", "ANCC", "Music Club", "Drama Club", "Fine Arts Club"];
-var event_venues = ["LH318", "VI 67", "SAC", "Basement", "Lounge"];
-var event_start_dates = ["2 Feb", "6 Feb", "8 Feb", "10 Feb", "15 Feb"];
-var is_event_subd = [true, false, true, false, false];
-var is_event_strd = [false, false, true, true, false];
-var event_cards = [];
+var up_event_names = ["Tor", "gui", "Raag", "Mujra", "Draw"];
+var up_event_mods = ["DevClub", "ANCC", "Music Club", "Drama Club", "Fine Arts Club"];
+var up_event_venues = ["LH318", "VI 67", "SAC", "Basement", "Lounge"];
+var up_event_start_dates = ["2 Feb", "6 Feb", "8 Feb", "10 Feb", "15 Feb"];
+var up_is_event_subd = [true, false, true, false, false];
+var up_is_event_strd = [false, false, true, true, false];
+var up_event_cards = [];
 
 /* DOM variables */
-var starred = document.getElementById('up_starred');
-var subs = document.getElementById('up_subs');
-var others = document.getElementById('up_others');
+var up_starred = document.getElementById('up_starred');
+var up_subs = document.getElementById('up_subs');
+var up_others = document.getElementById('up_others');
 
 /* Functions */
 // function to toggle card position of mod_cards[i]
-function toggleEventCard(ind)
+function up_toggleEventCard(ind)
 {
-	if(is_event_strd[ind])
+	if(up_is_event_strd[ind])
 	{
-		up_starred.removeChild(event_cards[ind]);
+		up_starred.removeChild(up_event_cards[ind]);
 	}
-	else if (is_event_subd[ind])
+	else if (up_is_event_subd[ind])
 	{
-		up_subs.removeChild(event_cards[ind]);
+		up_subs.removeChild(up_event_cards[ind]);
     }
     else
     {
-        up_others.removeChild(event_cards[ind]);
+        up_others.removeChild(up_event_cards[ind]);
     }
-	is_event_strd[ind] = !is_event_strd[ind];
-	event_cards[ind] = createEventCard(ind);
-	if(is_event_strd[ind])
+	up_is_event_strd[ind] = !up_is_event_strd[ind];
+	up_event_cards[ind] = up_createEventCard(ind);
+	if(up_is_event_strd[ind])
 	{
-		up_starred.appendChild(event_cards[ind]);
+		up_starred.appendChild(up_event_cards[ind]);
 	}
-	else if (is_event_subd[ind])
+	else if(up_is_event_subd[ind])
 	{
-		up_subs.appendChild(event_cards[ind]);
+		up_subs.appendChild(up_event_cards[ind]);
     }
     else
     {
-        up_others.appendChild(event_cards[ind]);
+        up_others.appendChild(up_event_cards[ind]);
     }
 }
 
 // returns a card object
-function createEventCard(ind)
+function up_createEventCard(ind)
 {
 	let card = document.createElement('div');
     card.classList.add('starred_event');
@@ -57,23 +57,23 @@ function createEventCard(ind)
 
 	let title = document.createElement('div');
 	title.classList.add('event_title');
-    title.textContent = event_names[ind];
+    title.textContent = up_event_names[ind];
     
 	let by = document.createElement('div');
 	by.classList.add('by');
-    by.textContent = event_mods[ind];
+    by.textContent = up_event_mods[ind];
 
 	let venue = document.createElement('div');
 	venue.classList.add('venue');
-    venue.textContent = event_venues[ind];
+    venue.textContent = up_event_venues[ind];
 
 	let start_at = document.createElement('div');
 	start_at.classList.add('event_time');
-    start_at.textContent = event_start_dates[ind];
+    start_at.textContent = up_event_start_dates[ind];
 
 	let button = document.createElement('div');
 	let image;
-	if(is_event_strd[ind])
+	if(up_is_event_strd[ind])
 	{
 		button.classList.add('unstar');
 		image = document.createElement('img');
@@ -86,7 +86,7 @@ function createEventCard(ind)
 		image.src = 'star.png';
 	}
 	button.appendChild(image);
-	button.addEventListener('click', function(){toggleEventCard(ind);}, false);
+	button.addEventListener('click', function(){up_toggleEventCard(ind);}, false);
 
     info.appendChild(title);
     info.appendChild(by);
@@ -99,19 +99,19 @@ function createEventCard(ind)
 
 /* Executions */
 // creates and deploys all cards in the mod_names array
-for(let i = 0; i < event_names.length; ++i)
+for(let i = 0; i < up_event_names.length; ++i)
 {
-	let card = createEventCard(i);
-	if(is_event_strd[i])
+	let card = up_createEventCard(i);
+	if(up_is_event_strd[i])
 	{
-		event_cards.push(up_starred.appendChild(card));
+		up_event_cards.push(up_starred.appendChild(card));
 	}
-	else if (is_event_subd[i])
+	else if (up_is_event_subd[i])
 	{
-		event_cards.push(up_subs.appendChild(card));
+		up_event_cards.push(up_subs.appendChild(card));
     }
     else
     {
-        event_cards.push(up_others.appendChild(card));
+        up_event_cards.push(up_others.appendChild(card));
     }
 }
