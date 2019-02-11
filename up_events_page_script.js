@@ -4,7 +4,7 @@
 var up_event_names = ["Tor", "gui", "Raag", "Mujra", "Draw"];
 var up_event_mods = ["DevClub", "ANCC", "Music Club", "Drama Club", "Fine Arts Club"];
 var up_event_venues = ["LH318", "VI 67", "SAC", "Basement", "Lounge"];
-var up_event_start_dates = ["2 Feb", "6 Feb", "8 Feb", "10 Feb", "15 Feb"];
+var up_event_start_dates = ["13 Feb 5:00pm - 13 Feb", "17 Feb 5:00pm - 18 Feb", "19 Feb 5:00pm - 19 Feb", "21 Feb 5:00pm - 25 Feb", "15 March 5:00pm - 16 March"];
 var up_is_event_subd = [true, false, true, false, false];
 var up_is_event_strd = [false, false, true, true, false];
 var up_event_cards = [];

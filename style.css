@@ -81,8 +81,8 @@ ul.outer_navbar, ul.inner_navbar {
     padding: 4%;
     padding-left: 11%;
     padding-right: 11%;
-    /*display: flex;
-    justify-content: space-between;*/
+    display: flex;
+    justify-content: space-between;
     vertical-align: middle;
 }
 
