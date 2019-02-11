@@ -18,32 +18,49 @@ var up_others = document.getElementById('up_others');
 // function to toggle card position of mod_cards[i]
 function up_toggleEventCard(ind)
 {
-	if(up_is_event_strd[ind])
+	// if(up_is_event_strd[ind])
+	// {
+	// 	up_starred.removeChild(up_event_cards[ind]);
+	// }
+	// else if (up_is_event_subd[ind])
+	// {
+	// 	up_subs.removeChild(up_event_cards[ind]);
+ //    }
+ //    else
+ //    {
+ //        up_others.removeChild(up_event_cards[ind]);
+ //    }
+	for(let i = 0; i < up_event_cards.length; ++i)
 	{
-		up_starred.removeChild(up_event_cards[ind]);
+		let card = up_event_cards[i];
+		if(up_is_event_strd[i])
+		{
+			up_starred.removeChild(card);
+		}
+		else if(up_is_event_subd[i])
+		{
+			up_subs.removeChild(card);
+		}
+		else
+		{
+			up_others.removeChild(card);
+		}
 	}
-	else if (up_is_event_subd[ind])
-	{
-		up_subs.removeChild(up_event_cards[ind]);
-    }
-    else
-    {
-        up_others.removeChild(up_event_cards[ind]);
-    }
 	up_is_event_strd[ind] = !up_is_event_strd[ind];
-	up_event_cards[ind] = up_createEventCard(ind);
-	if(up_is_event_strd[ind])
-	{
-		up_starred.appendChild(up_event_cards[ind]);
-	}
-	else if(up_is_event_subd[ind])
-	{
-		up_subs.appendChild(up_event_cards[ind]);
-    }
-    else
-    {
-        up_others.appendChild(up_event_cards[ind]);
-    }
+	generate_up_wall();
+	// up_event_cards[ind] = up_createEventCard(ind);
+	// if(up_is_event_strd[ind])
+	// {
+	// 	up_starred.appendChild(up_event_cards[ind]);
+	// }
+	// else if(up_is_event_subd[ind])
+	// {
+	// 	up_subs.appendChild(up_event_cards[ind]);
+ //    }
+ //    else
+ //    {
+ //        up_others.appendChild(up_event_cards[ind]);
+ //    }
 }
 
 // returns a card object
@@ -99,6 +116,26 @@ function up_createEventCard(ind)
 
 /* Executions */
 // creates and deploys all cards in the mod_names array
+function generate_up_wall() {
+	up_event_cards = [];
+	for(let i = 0; i < up_event_names.length; ++i)
+	{
+		let card = up_createEventCard(i);
+		if(up_is_event_strd[i])
+		{
+			up_event_cards.push(up_starred.appendChild(card));
+		}
+		else if (up_is_event_subd[i])
+		{
+			up_event_cards.push(up_subs.appendChild(card));
+	    }
+	    else
+	    {
+	        up_event_cards.push(up_others.appendChild(card));
+	    }
+	}
+}
+
 for(let i = 0; i < up_event_names.length; ++i)
 {
 	let card = up_createEventCard(i);

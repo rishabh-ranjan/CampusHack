@@ -18,32 +18,49 @@ var tom_others = document.getElementById('tom_others');
 // function to toggle card position of mod_cards[i]
 function tom_toggleEventCard(ind)
 {
-	if(tom_is_event_strd[ind])
+	// if(tom_is_event_strd[ind])
+	// {
+	// 	tom_starred.removeChild(tom_event_cards[ind]);
+	// }
+	// else if (tom_is_event_subd[ind])
+	// {
+	// 	tom_subs.removeChild(tom_event_cards[ind]);
+ //    }
+ //    else
+ //    {
+ //        tom_others.removeChild(tom_event_cards[ind]);
+ //    }
+	for(let i = 0; i < tom_event_cards.length; ++i)
 	{
-		tom_starred.removeChild(tom_event_cards[ind]);
+		let card = tom_event_cards[i];
+		if(tom_is_event_strd[i])
+		{
+			tom_starred.removeChild(card);
+		}
+		else if(tom_is_event_subd[i])
+		{
+			tom_subs.removeChild(card);
+		}
+		else
+		{
+			tom_others.removeChild(card);
+		}
 	}
-	else if (tom_is_event_subd[ind])
-	{
-		tom_subs.removeChild(tom_event_cards[ind]);
-    }
-    else
-    {
-        tom_others.removeChild(tom_event_cards[ind]);
-    }
 	tom_is_event_strd[ind] = !tom_is_event_strd[ind];
-	tom_event_cards[ind] = tom_createEventCard(ind);
-	if(tom_is_event_strd[ind])
-	{
-		tom_starred.appendChild(tom_event_cards[ind]);
-	}
-	else if(tom_is_event_subd[ind])
-	{
-		tom_subs.appendChild(tom_event_cards[ind]);
-    }
-    else
-    {
-        tom_others.appendChild(tom_event_cards[ind]);
-    }
+	generate_tom_wall();
+	// tom_event_cards[ind] = tom_createEventCard(ind);
+	// if(tom_is_event_strd[ind])
+	// {
+	// 	tom_starred.appendChild(tom_event_cards[ind]);
+	// }
+	// else if(tom_is_event_subd[ind])
+	// {
+	// 	tom_subs.appendChild(tom_event_cards[ind]);
+ //    }
+ //    else
+ //    {
+ //        tom_others.appendChild(tom_event_cards[ind]);
+ //    }
 }
 
 // returns a card object
@@ -99,6 +116,26 @@ function tom_createEventCard(ind)
 
 /* Executions */
 // creates and deploys all cards in the mod_names array
+function generate_tom_wall() {
+	tom_event_cards = [];
+	for(let i = 0; i < tom_event_names.length; ++i)
+	{
+		let card = tom_createEventCard(i);
+		if(tom_is_event_strd[i])
+		{
+			tom_event_cards.push(tom_starred.appendChild(card));
+		}
+		else if (tom_is_event_subd[i])
+		{
+			tom_event_cards.push(tom_subs.appendChild(card));
+	    }
+	    else
+	    {
+	        tom_event_cards.push(tom_others.appendChild(card));
+	    }
+	}
+}
+
 for(let i = 0; i < tom_event_names.length; ++i)
 {
 	let card = tom_createEventCard(i);
