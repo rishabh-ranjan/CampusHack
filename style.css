@@ -13,6 +13,7 @@ ul.outer_navbar, ul.inner_navbar {
     overflow: hidden;
     background-color:rgb(70, 70, 210);
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     text-align: center;
     vertical-align: middle;
@@ -63,6 +64,11 @@ ul.outer_navbar, ul.inner_navbar {
     display: inline-block;
     float: right;
     vertical-align: middle;
+}
+
+.add_sub:hover, .remove_sub:hover, .star:hover, .unstar:hover
+{
+    cursor: pointer;
 }
 
 .add_sub img, .remove_sub img, .star img, .unstar img {
@@ -136,4 +142,24 @@ ul.outer_navbar, ul.inner_navbar {
     padding: 25px;
     padding-top: 20px;
     margin: 10px;
-}   
+}
+
+input[type=text], textarea, input[type=password], input[type=datetime-local]
+{
+    background-color: rgba(153, 153, 153, 0.5);
+    border-radius: 10px;
+    outline: none;
+    border: 0;
+    padding: 10px;
+    font-size: 0.8em;
+    color: lightgray;
+}
+
+input[type=text],  input[type=password], input[type=datetime-local]
+{
+    width: 300px;
+}
+
+table {
+    font-size: 1.2em;
+}
