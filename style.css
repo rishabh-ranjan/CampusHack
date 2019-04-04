@@ -60,10 +60,6 @@ ul.outer_navbar, ul.inner_navbar {
 
 .add_sub, .remove_sub, .star, .unstar {
     width: 8%;
-    margin-right: 10px;
-    display: inline-block;
-    float: right;
-    vertical-align: middle;
 }
 
 .add_sub:hover, .remove_sub:hover, .star:hover, .unstar:hover
@@ -89,7 +85,7 @@ ul.outer_navbar, ul.inner_navbar {
     padding-right: 11%;
     display: flex;
     justify-content: space-between;
-    vertical-align: middle;
+    align-items: center;
 }
 
 /* .sub_event, .sub_mod {
